@@ -1,0 +1,83 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCH_ARGS	Makefile	/^	ARCH_ARGS := ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-$/;"	m
+KDIR	Makefile	/^	KDIR := \/home\/linux-5.10.4$/;"	m
+RTCCR	rtc_driver.c	/^        unsigned long  RTCCR;    \/* +0x0C: control register *\/$/;"	m	struct:__anon1	file:
+RTCDR	rtc_driver.c	/^        unsigned long  RTCDR;    \/* +0x00: data register *\/$/;"	m	struct:__anon1	file:
+RTCICR	rtc_driver.c	/^        unsigned long  RTCICR;   \/* +0x1C: interrupt clear register *\/$/;"	m	struct:__anon1	file:
+RTCIMSC	rtc_driver.c	/^        unsigned long  RTCIMSC;  \/* +0x10: interrupt mask set and clear register*\/$/;"	m	struct:__anon1	file:
+RTCLR	rtc_driver.c	/^        unsigned long  RTCLR;    \/* +0x08: load register *\/$/;"	m	struct:__anon1	file:
+RTCMIS	rtc_driver.c	/^        unsigned long  RTCMIS;   \/* +0x18: masked interrupt status register *\/$/;"	m	struct:__anon1	file:
+RTCMR	rtc_driver.c	/^        unsigned long  RTCMR;    \/* +0x04: match register *\/$/;"	m	struct:__anon1	file:
+RTCRIS	rtc_driver.c	/^        unsigned long  RTCRIS;   \/* +0x14: raw interrupt status register*\/$/;"	m	struct:__anon1	file:
+RTC_IOC_MAGIC	app.c	21;"	d	file:
+RTC_IOC_MAGIC	rtc_driver.c	47;"	d	file:
+RTC_SET_ALARM	app.c	23;"	d	file:
+RTC_SET_ALARM	rtc_driver.c	49;"	d	file:
+RTC_SET_TEST	app.c	24;"	d	file:
+RTC_SET_TIME	app.c	22;"	d	file:
+RTC_SET_TIME	rtc_driver.c	48;"	d	file:
+arm_rtc_primcell_driver_ids	rtc_driver.c	/^static struct platform_device_id  arm_rtc_primcell_driver_ids[] = {$/;"	v	typeref:struct:platform_device_id	file:
+class_device	rtc_driver.c	/^static struct device *class_device;$/;"	v	typeref:struct:device	file:
+cur_time	rtc_driver.c	/^static unsigned long cur_time = 0;$/;"	v	file:
+day	app.c	/^    unsigned int day;$/;"	m	struct:rtc_time	file:
+day	rtc_driver.c	/^    unsigned int day;$/;"	m	struct:rtc_time	file:
+devno	rtc_driver.c	/^    dev_t devno;$/;"	m	struct:rtc_device	file:
+hour	app.c	/^    unsigned int hour;$/;"	m	struct:rtc_time	file:
+hour	rtc_driver.c	/^    unsigned int hour;$/;"	m	struct:rtc_time	file:
+main	app.c	/^int main(void)$/;"	f
+min	app.c	/^    unsigned int min;$/;"	m	struct:rtc_time	file:
+min	rtc_driver.c	/^    unsigned int min;$/;"	m	struct:rtc_time	file:
+mon	app.c	/^    unsigned int mon;$/;"	m	struct:rtc_time	file:
+mon	rtc_driver.c	/^    unsigned int mon;$/;"	m	struct:rtc_time	file:
+ops	rtc_driver.c	/^    const struct rtc_class_operations *ops;$/;"	m	struct:rtc_device	typeref:struct:rtc_device::rtc_class_operations	file:
+ops	rtc_driver.c	/^    struct rtc_class_operations ops;$/;"	m	struct:pl031_rtc_data	typeref:struct:pl031_rtc_data::rtc_class_operations	file:
+pl031_local_data	rtc_driver.c	/^struct pl031_rtc_data pl031_local_data = {$/;"	v	typeref:struct:pl031_rtc_data
+pl031_rtc_data	rtc_driver.c	/^struct pl031_rtc_data {$/;"	s	file:
+pl031_set_rtc_time	rtc_driver.c	/^static int pl031_set_rtc_time(struct rtc_time *t)$/;"	f	file:
+regs	rtc_driver.c	/^volatile rtc_reg_t *regs = NULL;$/;"	v
+rtc	rtc_driver.c	/^    struct rtc_device *rtc;$/;"	m	struct:pl031_rtc_data	typeref:struct:pl031_rtc_data::rtc_device	file:
+rtc_alarm_handler	rtc_driver.c	/^static irqreturn_t  rtc_alarm_handler(int irq, void *dev_id)$/;"	f	file:
+rtc_cdev	rtc_driver.c	/^    struct  cdev *rtc_cdev;$/;"	m	struct:rtc_device	typeref:struct:rtc_device::cdev	file:
+rtc_class	rtc_driver.c	/^static struct class  *rtc_class;$/;"	v	typeref:struct:class	file:
+rtc_class_operations	rtc_driver.c	/^struct rtc_class_operations {$/;"	s	file:
+rtc_dev	rtc_device.c	/^struct platform_device rtc_dev = {$/;"	v	typeref:struct:platform_device
+rtc_dev	rtc_driver.c	/^static struct rtc_device rtc_dev;$/;"	v	typeref:struct:rtc_device	file:
+rtc_device	rtc_driver.c	/^struct rtc_device {$/;"	s	file:
+rtc_device_exit	rtc_device.c	/^module_exit(rtc_device_exit);$/;"	v
+rtc_device_exit	rtc_device.c	/^static void __exit rtc_device_exit(void)$/;"	f	file:
+rtc_device_init	rtc_device.c	/^module_init(rtc_device_init);$/;"	v
+rtc_device_init	rtc_device.c	/^static int __init rtc_device_init(void)$/;"	f	file:
+rtc_device_release	rtc_device.c	/^static void rtc_device_release(struct device *dev)$/;"	f	file:
+rtc_driver_exit	rtc_driver.c	/^module_exit(rtc_driver_exit);$/;"	v
+rtc_driver_exit	rtc_driver.c	/^static void __exit rtc_driver_exit(void)$/;"	f	file:
+rtc_driver_init	rtc_driver.c	/^module_init(rtc_driver_init);$/;"	v
+rtc_driver_init	rtc_driver.c	/^static int __init rtc_driver_init(void)$/;"	f	file:
+rtc_driver_probe	rtc_driver.c	/^static int rtc_driver_probe(struct platform_device *dev)$/;"	f	file:
+rtc_driver_remove	rtc_driver.c	/^static int rtc_driver_remove(struct platform_device *dev)$/;"	f	file:
+rtc_drv	rtc_driver.c	/^static struct platform_driver rtc_drv = {$/;"	v	typeref:struct:platform_driver	file:
+rtc_fops	rtc_driver.c	/^static const struct file_operations rtc_fops = {$/;"	v	typeref:struct:file_operations	file:
+rtc_ioctl	rtc_driver.c	/^static long rtc_ioctl(struct file *file, unsigned int cmd, unsigned long arg)$/;"	f	file:
+rtc_open	rtc_driver.c	/^static int rtc_open(struct inode *inode, struct file *filp)$/;"	f	file:
+rtc_read	rtc_driver.c	/^static ssize_t rtc_read(struct file *fp, char __user *buf, $/;"	f	file:
+rtc_reg_t	rtc_driver.c	/^} rtc_reg_t;$/;"	t	typeref:struct:__anon1	file:
+rtc_release	rtc_driver.c	/^static int rtc_release(struct inode *inode, struct file *fp)$/;"	f	file:
+rtc_resource	rtc_device.c	/^static struct resource rtc_resource[] = {$/;"	v	typeref:struct:resource	file:
+rtc_time	app.c	/^struct rtc_time{$/;"	s	file:
+rtc_time	rtc_driver.c	/^struct rtc_time{$/;"	s	file:
+rtc_time_translate	rtc_driver.c	/^static void rtc_time_translate(unsigned long time)$/;"	f	file:
+rtc_tm_to_time	rtc_driver.c	/^static unsigned long rtc_tm_to_time(struct rtc_time *t)$/;"	f	file:
+rtc_write	rtc_driver.c	/^static ssize_t rtc_write(struct file *fp, const char __user *buf, $/;"	f	file:
+sec	app.c	/^    unsigned int sec;$/;"	m	struct:rtc_time	file:
+sec	rtc_driver.c	/^    unsigned int sec;$/;"	m	struct:rtc_time	file:
+set_alarm	rtc_driver.c	/^    int (*set_alarm)(struct rtc_time *);$/;"	m	struct:rtc_class_operations	file:
+set_rtc_alarm	rtc_driver.c	/^static void set_rtc_alarm(void)$/;"	f	file:
+set_rtc_time	rtc_driver.c	/^static int set_rtc_time(struct rtc_device *rtc, struct rtc_time *t)$/;"	f	file:
+set_time	rtc_driver.c	/^    int (*set_time)(struct rtc_time *);$/;"	m	struct:rtc_class_operations	file:
+tm	rtc_driver.c	/^static struct rtc_time tm;$/;"	v	typeref:struct:rtc_time	file:
+year	app.c	/^    unsigned int year;$/;"	m	struct:rtc_time	file:
+year	rtc_driver.c	/^    unsigned int year;$/;"	m	struct:rtc_time	file:

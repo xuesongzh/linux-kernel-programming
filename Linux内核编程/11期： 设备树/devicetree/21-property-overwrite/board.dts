@@ -1,0 +1,11 @@
+/dts-v1/;
+
+#include "cpu.dtsi"
+
+/ {
+    wanglitao {
+        node_name = "board";
+        age  = <20>;
+    };
+
+};

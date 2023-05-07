@@ -1,0 +1,40 @@
+diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
+index 585edbfcc..544c92bcb 100644
+--- a/arch/arm/kernel/signal.c
++++ b/arch/arm/kernel/signal.c
+@@ -723,3 +723,17 @@ asmlinkage void do_rseq_syscall(struct pt_regs *regs)
+ 	rseq_syscall(regs);
+ }
+ #endif
++/* add by wit */
++asmlinkage  void sys_hello(const char __user *buf, size_t count)
++{
++    char kernel_buf[100] = {0};
++    if(buf)
++    {
++        copy_from_user(kernel_buf, buf, (count < 100) ? count:100);
++        printk("sys_hello: %s\n", kernel_buf);
++    }
++}
++
++
++
+diff --git a/include/linux/syscalls.h b/include/linux/syscalls.h
+index 37bea07c1..a43e2e0c6 100644
+--- a/include/linux/syscalls.h
++++ b/include/linux/syscalls.h
+@@ -674,6 +674,9 @@ asmlinkage long sys_sched_rr_get_interval(pid_t pid,
+ asmlinkage long sys_sched_rr_get_interval_time32(pid_t pid,
+ 						 struct old_timespec32 __user *interval);
+ 
++/* add by wit: add a system call: hello */
++asmlinkage void sys_hello(const char __user *buf, size_t count);
++
+ /* kernel/signal.c */
+ asmlinkage long sys_restart_syscall(void);
+ asmlinkage long sys_kill(pid_t pid, int sig);
+
+--- a/arch/arm/include/generated/calls-eabi.S
++++ b/arch/arm/include/generated/calls-eabi.S
+
++ NATIVE(441, sys_hello)

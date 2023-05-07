@@ -1,0 +1,169 @@
+of.h
+	bool of_node_name_eq(const struct device_node *np, const char *name);---------157
+	of_find_node_by_name(struct device_node *from, const char *name);    ---------70  
+	of_find_node_by_type(struct device_node *from,const char *type);--------------10
+	of_find_compatible_node(struct device_node *from,char *type,char *compat);-----289
+	of_find_matching_node_and_match-------------------------------------------------32
+	of_find_node_by_path(const char *path)----------------------------------------127
+	of_find_node_by_phandle(phandle handle);---------------------------------------15
+	of_get_parent(const struct device_node *node);---------------------------------118
+	of_get_next_parent(struct device_node *node);----------------------------------20
+	of_get_next_child(const struct device_node *node,struct device_node *prev);----58
+	of_get_compatible_child--------------------------------------------------------24
+	of_get_child_by_name(const struct device_node *node,const char *name);---------254
+	of_find_property(const struct device_node *np,const char *name,int *lenp);-----312
+	of_property_count_elems_of_size-------------------------------------------------41
+	of_property_read_u32_index(device_node *np,*propname,u32 index, u32 *out_value);-200
+	of_property_read_u64------------------------------------------------------------16
+	of_property_read_variable_u64_array---------------------------------------------6
+	of_property_read_string(device_node *np,char *propname,char **out_string);------302
+	of_property_match_string(device_node *np,char *propname, char *string);---------116
+	of_device_is_compatible(const struct device_node *device,const char *);---------647
+	of_device_is_available(const struct device_node *device);-----------------------153
+	of_get_property(struct device_node *node, char *name,int *lenp);----------------758
+	of_get_cpu_node(int cpu, unsigned int *thread);---------------------------------23
+	for_each_property_of_node(dn, pp)-----------------------------------------------20
+	of_n_addr_cells(struct device_node *np);----------------------------------------21
+	of_n_size_cells(struct device_node *np);----------------------------------------13
+	of_match_node(struct of_device_id *matches, struct device_node *node);----------253
+	of_parse_phandle(struct device_node *np, char *phandle_name,int index);---------499
+	of_parse_phandle_with_args------------------------------------------------------86
+	of_parse_phandle_with_fixed_args------------------------------------------------42
+	of_count_phandle_with_args------------------------------------------------------56
+	
+	of_alias_get_id(struct device_node *np, const char *stem);----------------------113
+	of_alias_get_highest_id(const char *stem);--------------------------------------6
+	of_alias_get_alias_list(of_device_id *matches,char *stem,*bitmap,nbits);--------4
+	of_machine_is_compatible(const char *compat);-----------------------------------338
+	of_add_property(struct device_node *np, struct property *prop);-----------------9
+	of_remove_property(struct device_node *np, struct property *prop);--------------8
+	of_update_property(struct device_node *np, struct property *newprop);-----------11
+	
+	of_property_read_u8_array(device_node*,char *propname,u8 *out_values,size_t sz)-33
+	of_property_read_u16_array------------------------------------------------------12
+	of_property_read_u32_array------------------------------------------------------186
+	of_property_read_u64_array------------------------------------------------------3
+	of_cpu_node_to_id(struct device_node *np);--------------------------------------9
+	of_node_to_nid(struct device_node *np);-----------------------------------------12
+	of_property_count_u32_elems(struct device_node *np,char *propname)--------------32
+	of_property_read_string_array---------------------------------------------------9
+	of_property_count_strings(const struct device_node *np,const char *propname)----61
+	of_property_read_string_index(device_node*,char *propname,int index,char **)----119
+	of_property_read_bool(const struct device_node *np,const char *propname)--------957
+	of_property_read_u8(struct device_node *np,char *propname,u8 *out_value)--------41
+	of_property_read_u16(struct device_node *np,char *propname,u16 *out_value)------24
+	of_property_read_u32(struct device_node *np,char *propname,u32 *out_value)------2393
+	of_property_read_s32(struct device_node *np, char *propname,s32 *out_value)-----15
+	of_get_child_count(const struct device_node *np)--------------------------------101
+	of_get_available_child_count(const struct device_node *np)----------------------33
+	
+of_address.h
+	of_translate_address(struct device_node *np, const __be32 *addr);---------------36
+	of_address_to_resource(struct device_node *dev, int index,struct resource *r);--314
+	of_iomap(struct device_node *device, int index);--------------------------------608
+	of_io_request_and_map(struct device_node *device,int index, const char *name);--57
+	of_get_address(struct device_node *dev,int index,u64*size,unsigned int *flags);-52
+	of_io_request_and_map(struct device_node *device,int index, const char *name)---57
+
+of_clk.h
+	of_clk_get_parent_count(const struct device_node *np)---------------------------51
+	of_clk_get_parent_name(const struct device_node *np,int index)------------------151
+
+of_device.h
+	of_match_device(const struct of_device_id *matches, const struct device *dev);--342
+	of_driver_match_device(struct device *dev,const struct device_driver *drv)------14
+	of_device_get_match_data(const struct device *dev);-----------------------------559
+	of_device_uevent(struct device *dev, struct kobj_uevent_env *env);--------------3
+	of_cpu_device_node_get(int cpu)-------------------------------------------------23
+
+of_dma.h
+	of_dma_controller_register------------------------------------------------------57
+	of_dma_controller_free----------------------------------------------------------55
+	of_dma_controller_register------------------------------------------------------57
+
+of_fdt.h
+	of_scan_flat_dt(int (*it)( node,char*uname,int depth, void *data),void *data);--10
+	of_scan_flat_dt_subnodes--------------------------------------------------------2
+	of_get_flat_dt_subnode_by_name--------------------------------------------------1
+	of_get_flat_dt_prop(unsigned long node, const char *name,int *size);------------52
+	of_flat_dt_is_compatible(unsigned long node, const char *name);-----------------6
+	of_get_flat_dt_root(void);------------------------------------------------------2
+	early_init_dt_scan_chosen-------------------------------------------------------3
+	early_init_dt_scan_memory-------------------------------------------------------3
+	
+of_gpio.h
+	to_of_mm_gpio_chip(struct gpio_chip *gc)----------------------------------------17
+	of_get_named_gpio_flags(*np,list_name,index, enum of_gpio_flags *flags);--------19
+	of_mm_gpiochip_add_data---------------------------------------------------------9
+	of_mm_gpiochip_remove-----------------------------------------------------------5
+	of_get_named_gpio_flags---------------------------------------------------------18
+	of_gpio_named_count-------------------------------------------------------------9
+	of_get_named_gpio(struct device_node *np,const char *propname, int index)-------123
+	of_get_gpio(struct device_node *np, int index)----------------------------------11
+
+of_graph.h  和显示相关的接口
+of_iommu.h
+of_mdio.h
+
+of_irq.h
+	of_irq_parse_raw(const __be32 *addr, struct of_phandle_args *out_irq);----------6
+	of_irq_parse_one(device_node *device,index,struct of_phandle_args *out_irq);----15
+	irq_create_of_mapping(struct of_phandle_args *irq_data);------------------------8
+	of_irq_to_resource(struct device_node *dev, int index, struct resource *r);-----6
+	of_irq_count(struct device_node *dev);------------------------------------------18
+	of_irq_get(struct device_node *dev, int index);---------------------------------41
+	of_irq_get_byname(struct device_node *dev, const char *name);-------------------35
+	of_irq_to_resource_table(device_node *dev,struct resource *res, int nr_irqs);---7
+	of_irq_find_parent(struct device_node *child);----------------------------------24
+	of_msi_get_domain---------------------------------------------------------------8
+	of_msi_map_get_device_domain----------------------------------------------------4
+	irq_of_parse_and_map(struct device_node *node, int index);----------------------328
+
+of_net.h
+	of_get_phy_mode(struct device_node *np, phy_interface_t *interface);------------57
+	of_get_mac_address(struct device_node *np);-------------------------------------61
+	of_find_net_device_by_node(struct device_node *np);-----------------------------4
+	
+of_pci.h
+	of_pci_find_child_device(struct device_node *parent, unsigned int devfn);-------4
+	of_pci_get_devfn(struct device_node *np);---------------------------------------8
+	of_pci_check_probe_only(void);--------------------------------------------------4
+	
+of_platform.h
+	*of_device_alloc(struct device_node *np,char *bus_idstruct device *parent);-----3
+	of_find_device_by_node(struct device_node *np);---------------------------------132
+	of_platform_device_create(device_node *np,char *bus_id,struct device *parent);--26
+	of_platform_device_destroy(struct device *dev, void *data);---------------------13
+	of_platform_populate(struct device_node *root, struct of_device_id *matches,
+				 struct of_dev_auxdata *lookup, struct device *parent);-------------88
+	of_platform_default_populate(struct device_node *root, 
+	                          struct of_dev_auxdata *lookup,struct device *parent);-44
+	of_platform_depopulate(struct device *parent);----------------------------------45
+	devm_of_platform_populate(struct device *dev);----------------------------------42
+	devm_of_platform_depopulate(struct device *dev);--------------------------------4
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

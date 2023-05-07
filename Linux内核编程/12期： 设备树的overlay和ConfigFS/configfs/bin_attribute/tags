@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCH_ARGS	Makefile	/^	ARCH_ARGS := ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-$/;"	m
+KDIR	Makefile	/^	KDIR := \/home\/linux-5.10.4$/;"	m
+childless	childless.c	/^struct childless {$/;"	s	file:
+childless_attrs	childless.c	/^static struct configfs_attribute *childless_attrs[] = {$/;"	v	typeref:struct:configfs_attribute	file:
+childless_description_show	childless.c	/^static ssize_t childless_description_show(struct config_item *item, char *page)$/;"	f	file:
+childless_showme_show	childless.c	/^static ssize_t childless_showme_show(struct config_item *item, char *page)$/;"	f	file:
+childless_storeme_show	childless.c	/^static ssize_t childless_storeme_show(struct config_item *item, char *page)$/;"	f	file:
+childless_storeme_store	childless.c	/^static ssize_t childless_storeme_store(struct config_item *item,$/;"	f	file:
+childless_subsys	childless.c	/^static struct childless childless_subsys = {$/;"	v	typeref:struct:childless	file:
+childless_type	childless.c	/^static const struct config_item_type childless_type = {$/;"	v	typeref:struct:config_item_type	file:
+configfs_example_exit	childless.c	/^module_exit(configfs_example_exit);$/;"	v
+configfs_example_exit	childless.c	/^static void __exit configfs_example_exit(void)$/;"	f	file:
+configfs_example_init	childless.c	/^module_init(configfs_example_init);$/;"	v
+configfs_example_init	childless.c	/^static int __init configfs_example_init(void)$/;"	f	file:
+showme	childless.c	/^	int showme;$/;"	m	struct:childless	file:
+storeme	childless.c	/^	int storeme;$/;"	m	struct:childless	file:
+subsys	childless.c	/^	struct configfs_subsystem subsys;$/;"	m	struct:childless	typeref:struct:childless::configfs_subsystem	file:
+to_childless	childless.c	/^static inline struct childless *to_childless(struct config_item *item)$/;"	f	file:

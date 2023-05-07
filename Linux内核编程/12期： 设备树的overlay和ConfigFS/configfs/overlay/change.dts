@@ -1,0 +1,7 @@
+
+/dts-v1/;
+/plugin/;
+
+&{/hello} {
+    hello_name = "wit";
+};

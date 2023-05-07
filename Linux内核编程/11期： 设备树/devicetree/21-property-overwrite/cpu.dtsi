@@ -1,0 +1,8 @@
+
+/ {
+
+    wanglitao {
+        node_name = "cpu";	
+        age = <10>;
+    };
+};

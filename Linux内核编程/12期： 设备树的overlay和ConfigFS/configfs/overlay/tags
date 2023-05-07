@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCH_ARGS	Makefile	/^	ARCH_ARGS := ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-$/;"	m
+KDIR	Makefile	/^	KDIR := \/home\/linux-5.10.4$/;"	m
+container_of_dtbocfg_overlay_item	demo.c	/^static inline struct dtbocfg_overlay_item* container_of_dtbocfg_overlay_item(struct config_item *item)$/;"	f	file:
+dtbo	demo.c	/^    void*                   dtbo;$/;"	m	struct:dtbocfg_overlay_item	file:
+dtbo_size	demo.c	/^    int                     dtbo_size;$/;"	m	struct:dtbocfg_overlay_item	file:
+dtbocfg_module_exit	demo.c	/^module_exit(dtbocfg_module_exit);$/;"	v
+dtbocfg_module_exit	demo.c	/^static void __exit dtbocfg_module_exit(void)$/;"	f	file:
+dtbocfg_module_init	demo.c	/^module_init(dtbocfg_module_init);$/;"	v
+dtbocfg_module_init	demo.c	/^static int __init dtbocfg_module_init(void)$/;"	f	file:
+dtbocfg_overlay_attrs	demo.c	/^static struct configfs_attribute *dtbocfg_overlay_attrs[] = {$/;"	v	typeref:struct:configfs_attribute	file:
+dtbocfg_overlay_bin_attrs	demo.c	/^static struct configfs_bin_attribute *dtbocfg_overlay_bin_attrs[] = {$/;"	v	typeref:struct:configfs_bin_attribute	file:
+dtbocfg_overlay_group	demo.c	/^static struct config_group dtbocfg_overlay_group;$/;"	v	typeref:struct:config_group	file:
+dtbocfg_overlay_group_drop_item	demo.c	/^static void dtbocfg_overlay_group_drop_item(struct config_group *group, struct config_item *item)$/;"	f	file:
+dtbocfg_overlay_group_make_item	demo.c	/^static struct config_item *dtbocfg_overlay_group_make_item(struct config_group *group, const char *name)$/;"	f	file:
+dtbocfg_overlay_item	demo.c	/^struct dtbocfg_overlay_item {$/;"	s	file:
+dtbocfg_overlay_item_create	demo.c	/^static int dtbocfg_overlay_item_create(struct dtbocfg_overlay_item *overlay)$/;"	f	file:
+dtbocfg_overlay_item_dtbo_read	demo.c	/^static ssize_t dtbocfg_overlay_item_dtbo_read(struct config_item *item, void *buf, size_t size)$/;"	f	file:
+dtbocfg_overlay_item_dtbo_write	demo.c	/^static ssize_t dtbocfg_overlay_item_dtbo_write(struct config_item *item, const void *buf, size_t count)$/;"	f	file:
+dtbocfg_overlay_item_ops	demo.c	/^static struct configfs_item_operations dtbocfg_overlay_item_ops = {$/;"	v	typeref:struct:configfs_item_operations	file:
+dtbocfg_overlay_item_release	demo.c	/^static void dtbocfg_overlay_item_release(struct dtbocfg_overlay_item *overlay)$/;"	f	file:
+dtbocfg_overlay_item_status_show	demo.c	/^static ssize_t dtbocfg_overlay_item_status_show(struct config_item *item, char *page)$/;"	f	file:
+dtbocfg_overlay_item_status_store	demo.c	/^static ssize_t dtbocfg_overlay_item_status_store(struct config_item *item, const char *buf, size_t count)$/;"	f	file:
+dtbocfg_overlay_item_type	demo.c	/^static struct config_item_type dtbocfg_overlay_item_type = {$/;"	v	typeref:struct:config_item_type	file:
+dtbocfg_overlay_release	demo.c	/^static void dtbocfg_overlay_release(struct config_item *item)$/;"	f	file:
+dtbocfg_overlays_ops	demo.c	/^static struct configfs_group_operations dtbocfg_overlays_ops = {$/;"	v	typeref:struct:configfs_group_operations	file:
+dtbocfg_overlays_type	demo.c	/^static struct config_item_type dtbocfg_overlays_type = {$/;"	v	typeref:struct:config_item_type	file:
+dtbocfg_root_ops	demo.c	/^static struct configfs_group_operations dtbocfg_root_ops = {$/;"	v	typeref:struct:configfs_group_operations	file:
+dtbocfg_root_subsys	demo.c	/^static struct configfs_subsystem dtbocfg_root_subsys = {$/;"	v	typeref:struct:configfs_subsystem	file:
+dtbocfg_root_type	demo.c	/^static struct config_item_type dtbocfg_root_type = {$/;"	v	typeref:struct:config_item_type	file:
+id	demo.c	/^    int                     id;$/;"	m	struct:dtbocfg_overlay_item	file:
+item	demo.c	/^    struct config_item	    item;$/;"	m	struct:dtbocfg_overlay_item	typeref:struct:dtbocfg_overlay_item::config_item	file:
+node	demo.c	/^    struct device_node*     node;$/;"	m	struct:dtbocfg_overlay_item	typeref:struct:dtbocfg_overlay_item::device_node	file:

@@ -1,0 +1,7 @@
+
+before insmod and run this led_of_demo.ko
+you should re-compile the uImage 
+    1): drivers/leds/led-gpios.o delete
+    2): make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage
+        LOADADDR=0x60003000
+

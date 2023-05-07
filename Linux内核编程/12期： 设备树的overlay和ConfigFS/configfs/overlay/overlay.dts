@@ -1,0 +1,10 @@
+
+/dts-v1/;
+/plugin/;
+
+&{/} {
+    hello_id = <0x1000>;
+    hello {
+        hello_name = "wanglitao";
+    };
+};

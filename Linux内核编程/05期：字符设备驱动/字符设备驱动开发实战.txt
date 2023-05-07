@@ -1,0 +1,105 @@
+---------------------------------------------------
+
+		Linux内核编程第05期：字符设备驱动
+					  wit
+			    公众号：宅学部落
+	     视频淘宝店：wanglitao.taobao.com
+---------------------------------------------------
+00 本期课程规划
+01 字符设备驱动开发框架
+	文件名--inode--扇区位置、block/page--NAND驱动/磁盘驱动
+	设备节点--inode--设备号--设备驱动
+02 编写第一个字符驱动：RTC
+	实现字符驱动的read接口
+03 内核源码解读：字符设备的注册过程
+04 内核源码解读：字符设备的open/read过程
+	Linux系统编程01期：揭开文件系统什么的面纱
+	文件名-inode-扇区
+	设备节点--inode--字符设备--设备驱动的open、read
+	0：stdin
+	1：stdout
+	2：stderr
+	3:rtc
+05 使用cdev接口编写字符驱动
+	设备号：主设备号+次设备号，222+0，222+1，20位+12位
+06 动态申请设备号
+	每个设备都有设备号：主设备号(12)+次设备号(20) = 32位的整数
+07 自动创建设备节点
+	alloc_chrdev_region:动态设备号，返回的设备号不一定是固定的
+	udev：运行的用户空间，用来自动创建设备节点:/dev/xxx
+		sysfs：内核的一些变量值、参数，uevent
+		tmpfs: 
+	mdev：busybox
+	内核：class_create、device_create
+08 实现字符驱动接口：write
+09 设备驱动的私有数据：private_data
+	open接口：设备类型：
+		xxx_init：注册
+		open：后续的read、write
+		cdev--cdev_init--cdev_add
+		struct rtc_chrdev
+		{
+			struct cdev cdev;
+			dev_t devno;
+		};
+10 实现字符驱动接口：ioctl
+	linux哲学：一切皆文件，设备文件、内存中的一片区域、进程、普通磁盘文件
+	文件模型：open、read、write、close  
+	字符设备：
+		串口：波特率
+		显示屏：
+		RTC：读时间、设置时间、设置闹钟
+ 			  read     write     cmd--ioctl 1 2 3
+11 ioctl命令编码规范
+		身份证：区域+年龄+性别
+		|----------|--------|------|-------- |
+		| 8 bit　　|  8 bit | 2 bit|8~14 bit|
+		   type        nr      dir    size
+	用来定义cmd命令的宏：
+		#define _IO(type,nr)		_IOC(_IOC_NONE,(type),(nr),0)
+		#define _IOR(type,nr,size)	_IOC(_IOC_READ,(type),(nr),(_IOC_TYPECHECK(size)))
+		#define _IOW(type,nr,size)	_IOC(_IOC_WRITE,(type),(nr),(_IOC_TYPECHECK(size)))
+		#define _IOWR(type,nr,size)	_IOC(_IOC_READ|_IOC_WRITE,(type),(nr),(_IOC_TYPECHECK(size)))
+		#define _IOC_TYPECHECK(size) sizeof(size)
+12 让你的驱动更加稳定高效
+	检查ioctl命令
+		_IOC_TYPE(cmd)：判断应用程序传下来的命令type是否正确
+		_IOC_DIR(cmd)：判断命令是读还是写
+	检测用户层传递的内存地址是否合法
+		access_ok(addr,size)：判断用户层传递的内存地址是否合法
+		返回值
+			1：成功
+			0：失败	
+		有些函数内部自带检测：copy_from_user，copy_to_user，get_user，put_user
+		有些没有，需要用户自己检测：__get_user，__put_user
+	分支预测优化：likely()、unlikely()
+		CPU cache和流水线结构:流水线停顿
+		...
+		if (likely(a==1))
+			...
+		else likely
+			...
+13 ioctl接口封装：库
+	提供给用户更方便使用的接口
+	# gcc -c rtclib.c
+	# ar rcs librtc.a rtclib.o
+	# gcc main.c -L. -lrtc
+14 编写文档和用户手册
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
