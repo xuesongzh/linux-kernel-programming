@@ -1,3 +1,4 @@
+# 编译的时候会解析两次，先解析else，再解析if
 ifneq ($(KERNELRELEASE),)
 obj-m := mathmodule.o
 obj-m += hello.o

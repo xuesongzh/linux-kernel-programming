@@ -164,17 +164,17 @@ static int __init configfs_example_init(void)
 	struct configfs_subsystem *subsys;
 	int ret;
 
-		subsys = &simple_children_subsys;
+	subsys = &simple_children_subsys;
 
-		config_group_init(&subsys->su_group);
-		mutex_init(&subsys->su_mutex);
-		
-        ret = configfs_register_subsystem(subsys);
-		if (ret) {
-			pr_err("Error %d while registering subsystem %s\n",
-			       ret, subsys->su_group.cg_item.ci_namebuf);
-			goto out_unregister;
-		}
+	config_group_init(&subsys->su_group);
+	mutex_init(&subsys->su_mutex);
+	
+	ret = configfs_register_subsystem(subsys);
+	if (ret) {
+		pr_err("Error %d while registering subsystem %s\n",
+				ret, subsys->su_group.cg_item.ci_namebuf);
+		goto out_unregister;
+	}
 
 	return 0;
 

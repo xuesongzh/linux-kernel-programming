@@ -52,11 +52,12 @@ static int __init rtc_init(void)
 {
 
     irqreturn_t ret = 0;
-
+    // 物理地址映射成虚拟地址
     regs = (rtc_reg_t *)ioremap(RTC_BASE, sizeof(rtc_reg_t)); 
     printk("rtc_init\n");
 
     set_rtc_alarm(regs);
+    // 39-软中断号
     ret = request_irq(39, rtc_alarm_handler, 0, "rtc0-test", NULL);
     if (ret == -1){
         printk("request_irq failed!\n");

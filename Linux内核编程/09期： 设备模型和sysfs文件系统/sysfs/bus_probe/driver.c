@@ -6,7 +6,6 @@
 
 extern struct bus_type hello_bus_type;
 
-
 static int hello_driver_probe(struct device *dev)
 {
 	printk("%s: probe and init hello_device\n", __func__);

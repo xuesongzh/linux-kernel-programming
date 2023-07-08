@@ -8,15 +8,15 @@
 static char hello_buf[64];
 static struct list_head hello_list_head;
 
-struct hello_struct {
+struct hello_struct
+{
     unsigned int value;
     struct list_head node;
 };
 
-
 static void *hello_seq_start(struct seq_file *s, loff_t *pos)
 {
-   return seq_list_start(&hello_list_head, *pos) ;
+    return seq_list_start(&hello_list_head, *pos);
 }
 
 static void *hello_seq_next(struct seq_file *s, void *v, loff_t *pos)
@@ -26,7 +26,7 @@ static void *hello_seq_next(struct seq_file *s, void *v, loff_t *pos)
 
 static void hello_seq_stop(struct seq_file *s, void *v)
 {
-    //printk("stop\n");
+    // printk("stop\n");
 }
 
 static int hello_seq_show(struct seq_file *s, void *v)
@@ -38,9 +38,9 @@ static int hello_seq_show(struct seq_file *s, void *v)
 
 static struct seq_operations hello_seq_ops = {
     .start = hello_seq_start,
-    .next  = hello_seq_next,
-    .stop  = hello_seq_stop,
-    .show  = hello_seq_show,
+    .next = hello_seq_next,
+    .stop = hello_seq_stop,
+    .show = hello_seq_show,
 };
 
 static int hello_open(struct inode *inode, struct file *file)
@@ -48,12 +48,13 @@ static int hello_open(struct inode *inode, struct file *file)
     return seq_open(file, &hello_seq_ops);
 }
 
-static ssize_t hello_write(struct file *filp, const char __user *buf, 
-                            size_t len, loff_t *ppos)
+static ssize_t hello_write(struct file *filp, const char __user *buf,
+                           size_t len, loff_t *ppos)
 {
     int ret;
     struct hello_struct *data;
-    if (len == 0 || len > 64) {
+    if (len == 0 || len > 64)
+    {
         ret = -EFAULT;
         return ret;
     }
@@ -62,7 +63,8 @@ static ssize_t hello_write(struct file *filp, const char __user *buf,
         return -EFAULT;
 
     data = kmalloc(sizeof(struct hello_struct), GFP_KERNEL);
-    if (data != NULL) {
+    if (data != NULL)
+    {
         data->value = simple_strtoul(hello_buf, NULL, 0);
         list_add(&data->node, &hello_list_head);
     }
@@ -71,24 +73,25 @@ static ssize_t hello_write(struct file *filp, const char __user *buf,
 }
 
 static const struct proc_ops hello_ops = {
-    .proc_open     = hello_open,
-    .proc_read     = seq_read,
-    .proc_write    = hello_write,
+    .proc_open = hello_open,
+    .proc_read = seq_read,
+    .proc_write = hello_write,
 };
-
 
 #define FILE_NAME "hello"
 
 int __init hello_procfs_init(void)
 {
     int ret = 0;
-    
+
     INIT_LIST_HEAD(&hello_list_head);
 
-    if (proc_create(FILE_NAME, 0666, NULL, &hello_ops) == NULL) {
+    if (proc_create(FILE_NAME, 0666, NULL, &hello_ops) == NULL)
+    {
         ret = -ENOMEM;
         printk("Create /proc/%s failed\n", FILE_NAME);
-    } else 
+    }
+    else
         printk("Create /proc/%s Success!\n", FILE_NAME);
 
     return ret;
@@ -97,9 +100,10 @@ int __init hello_procfs_init(void)
 void __exit hello_procfs_exit(void)
 {
     struct hello_struct *data;
-    
+
     remove_proc_entry(FILE_NAME, NULL);
-    while (!list_empty(&hello_list_head)) {
+    while (!list_empty(&hello_list_head))
+    {
         data = list_entry(hello_list_head.next, struct hello_struct, node);
         list_del(&data->node);
         kfree(data);

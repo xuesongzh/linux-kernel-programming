@@ -208,6 +208,8 @@ int register_rtc_device(struct rtc_class_operations *rtc_class_ops)
         printk("device_create failed!\n");
         return -1;
     }
+
+    // devm_kmalloc devm_free 自动管理内存
     
    // rtc_dev = kmalloc(sizeof(struct rtc_device), GFP_KERNEL);
     rtc_dev = devm_kzalloc(class_device, sizeof(struct rtc_device), GFP_KERNEL);
@@ -225,10 +227,6 @@ int register_rtc_device(struct rtc_class_operations *rtc_class_ops)
     else {
         printk("Register char module: rtc success!\n");
     }
-
-
-
-
 	
     return 0;
 }

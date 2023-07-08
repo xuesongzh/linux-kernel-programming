@@ -5,7 +5,7 @@ obj-m := hello.o
 
 #else
 
-#EXTRA_CFLAGS += -DDEBUG 
+EXTRA_CFLAGS += -DDEBUG 
 KDIR := /home/linux-5.10.4
 ARCH_ARGS := CROSS_COMPILE=arm-linux-gnueabi- ARCH=arm
 

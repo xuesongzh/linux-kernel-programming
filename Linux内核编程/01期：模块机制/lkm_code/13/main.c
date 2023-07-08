@@ -23,3 +23,4 @@ int main(void)
     return 0;
 }
 
+#gcc main.c module1/module1.c module2/module2.c module3/module3.c -I inc/

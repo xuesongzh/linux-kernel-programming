@@ -117,7 +117,7 @@ static ssize_t rtc_proc_write(struct file *filp, const char __user *buf,
     regs->RTCLR = cur_time;
     return len;
 }
-
+// 标准IO
 static const struct file_operations rtc_fops = {
     .owner   = THIS_MODULE,
     .read    = rtc_read,
@@ -125,7 +125,7 @@ static const struct file_operations rtc_fops = {
     .open    = rtc_open,
     .release = rtc_release,
 };
-
+// proc接口
 static const struct proc_ops rtc_proc_ops = {
     .proc_open  = rtc_open,
     .proc_read  = seq_read,
@@ -163,9 +163,9 @@ static int __init rtc_init(void)
     time = proc_create_data("time", 0666, NULL, &rtc_proc_ops, NULL);
     if (time == NULL) {
         ret = -ENOMEM;
-        printk("Create /proc/rtc/time failed\n");
+        printk("Create /proc/time failed\n");
     } else
-        printk("Create /proc/rtc/time success\n");
+        printk("Create /proc/time success\n");
 
     return 0;
 }

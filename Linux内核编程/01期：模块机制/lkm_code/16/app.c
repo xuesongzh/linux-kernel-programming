@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#mknod /dev/hello c 222 0
 int main(void)
 {
     int fd;

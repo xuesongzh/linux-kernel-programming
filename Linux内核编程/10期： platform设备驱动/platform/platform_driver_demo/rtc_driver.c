@@ -35,7 +35,7 @@ static unsigned long current_time = 0;
 void set_rtc_alarm(rtc_reg_t *regs)
 {
     unsigned long tmp = 0;
-    tmp = regs->RTCCR;    /* write enable */
+    tmp = regs->RTCCR;    /* w rite enable */
     tmp = tmp & 0xFFFFFFFE;
     regs->RTCCR = tmp;
 

@@ -66,9 +66,7 @@ static int __init hello_init(void)
         printk("Register char module: hello failed..\n");
         return 0;
     }
-    else {
-        printk("Register char module: hello success!\n");
-    }
+    printk("Register char module: hello success!\n");
     
     return 0;
 }

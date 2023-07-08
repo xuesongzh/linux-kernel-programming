@@ -232,7 +232,7 @@ static int rtc_driver_probe(struct platform_device *dev)
         printk("Register char module: rtc success!\n");
     }
 
-
+    // device_create会发送uevent到用户空间，mdev检测会去自动创建设备节点
     rtc_class = class_create(THIS_MODULE, "rtc-class");
     if (IS_ERR(rtc_class)) {
         printk("class_create failed!\n");

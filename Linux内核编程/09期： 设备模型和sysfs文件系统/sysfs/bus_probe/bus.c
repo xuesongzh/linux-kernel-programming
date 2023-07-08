@@ -15,6 +15,7 @@ static int hello_bus_match(struct device *dev,  struct device_driver *driver)
 
 static int hello_bus_probe(struct device *dev)
 {
+    // bus中的probe调用driver中的probe
     struct device_driver *drv = dev->driver; 
     
     printk("%s\n", __func__);

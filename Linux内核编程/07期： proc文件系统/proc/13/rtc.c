@@ -276,8 +276,6 @@ static void __exit rtc_exit(void)
     cdev_del(rtc_cdev);
     unregister_chrdev_region(devno, 1);
     printk("Goodbye char module: rtc!\n");
-
-
 }
 
 module_init(rtc_init);

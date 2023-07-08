@@ -13,7 +13,6 @@
 	实现字符驱动的read接口
 03 内核源码解读：字符设备的注册过程
 04 内核源码解读：字符设备的open/read过程
-	Linux系统编程01期：揭开文件系统什么的面纱
 	文件名-inode-扇区
 	设备节点--inode--字符设备--设备驱动的open、read
 	0：stdin
@@ -21,15 +20,15 @@
 	2：stderr
 	3:rtc
 05 使用cdev接口编写字符驱动
-	设备号：主设备号+次设备号，222+0，222+1，20位+12位
+	设备号：主设备号+次设备号，222+0，222+1，12位+20位
 06 动态申请设备号
 	每个设备都有设备号：主设备号(12)+次设备号(20) = 32位的整数
 07 自动创建设备节点
 	alloc_chrdev_region:动态设备号，返回的设备号不一定是固定的
-	udev：运行的用户空间，用来自动创建设备节点:/dev/xxx
+	udev：运行在用户空间，用来自动创建设备节点:/dev/xxx
 		sysfs：内核的一些变量值、参数，uevent
 		tmpfs: 
-	mdev：busybox
+	mdev：busybox mdev -d
 	内核：class_create、device_create
 08 实现字符驱动接口：write
 09 设备驱动的私有数据：private_data

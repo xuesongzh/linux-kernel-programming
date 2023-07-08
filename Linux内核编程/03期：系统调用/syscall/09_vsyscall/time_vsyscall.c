@@ -3,9 +3,8 @@
 
 typedef time_t (*time_fp)(time_t *);
 
-int main(void)
-{
-    time_t t1,t2;
+int main(void) {
+    time_t t1, t2;
 
     t1 = time(NULL);
 
@@ -17,3 +16,7 @@ int main(void)
 
     return 0;
 }
+
+// glibc
+// grep -rn "VSYSCALL_ADDR"
+// VSYSCALL_ADDR的地址是写死的，不安全
