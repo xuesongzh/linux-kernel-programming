@@ -1526,4 +1526,4 @@ https://github.com/torvalds/linux/tree/master/Documentation/translations/zh_CN/p
 
 1. [Linux内核链表——看这一篇文章就够了](https://www.cnblogs.com/yangguang-it/p/11667772.html)
 
-2. [维基百科：红黑树](https://zh.wikipedia.org/wiki/红黑树)
+2. [维基百科：红黑树](https://zh.wikipedia.org/wiki/红黑树)     

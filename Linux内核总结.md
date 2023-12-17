@@ -53,15 +53,15 @@
   wait_list不为空的时候，取出第一个进程，wake_up唤醒该进程，执行临界区代码。
 
 
-![semaphore](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/semaphore.png)
+![semaphore](./images/kernel/semaphore.png)
 
 ### spinlock
 
-![spinlock](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/spinlock.png)
+![spinlock](./images/kernel/spinlock.png)
 
-![spinlock_func](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/spinlock_func.png)
+![spinlock_func](./images/kernel/spinlock_func.png)
 
- ![arch_spinlock](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/arch_spinlock.png)
+ ![arch_spinlock](./images/kernel/arch_spinlock.png)
 
 arch_spin_lock函数的作用：
 
@@ -71,39 +71,39 @@ arch_spin_lock函数的作用：
 
 ### rwlock
 
-![rwlock](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/rwlock.png)
+![rwlock](./images/kernel/rwlock.png)
 
 ### seqlock
 
-![seqlock](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/seqlock.png)
+![seqlock](./images/kernel/seqlock.png)
 
 ### 各种锁总结
 
-![lock_compare](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/lock_compare.png)
+![lock_compare](./images/kernel/lock_compare.png)
 
 ### 用户栈和内核栈
 
-![stack](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/stack.png)
+![stack](./images/kernel/stack.png)
 
-![task_struct](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/task_struct.png)
+![task_struct](./images/kernel/task_struct.png)
 
-![kernel_stack](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/kernel_stack.png)
+![kernel_stack](./images/kernel/kernel_stack.png)
 
-![thread_union](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/thread_union.png)
+![thread_union](./images/kernel/thread_union.png)
 
-![thread_info](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/thread_info.png)
+![thread_info](./images/kernel/thread_info.png)
 
 ### 进程上下文和中断上下文
 
-![preempt_count](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/preempt_count.png)
+![preempt_count](./images/kernel/preempt_count.png)
 
 根据当前内核栈的栈顶指针sp，通过与THREAD_SIZE 对其的方式找到内核栈的首地址，也就是thread_info的首地址 
 
-![current_thread_info](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/current_thread_info.png)
+![current_thread_info](./images/kernel/current_thread_info.png)
 
 然后通过thread_info获取到preempt_count，然后跟对应的mask比较判断现在是处于什么上下文
 
-![context](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/context.png)
+![context](./images/kernel/context.png)
 
 ##### hardirq
 
@@ -117,12 +117,10 @@ local_bh_disable 进入软中断上下文，对应的softirq_count加一
 
 local_bh_enable 退出软中断上下文，对应的softirq_count减一
 
-![softirq](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/softirq.png)
+![softirq](./images/kernel/softirq.png)
 
 pre-cpu变量，每个cpu只能看见自己的__softirq_pending变量副本，这样哪个cpu触发软中断，就由哪个cpu执行软中断。
 
 最终都是通过调用do_softirq检查有哪些未处理的软中断，去调用对应的action函数去执行。
 
-![do_softirq](https://raw.githubusercontent.com/xuesongzh/images/master/kernel/do_softirq.png)
-
- 
+![do_softirq](./images/kernel/do_softirq.png)
